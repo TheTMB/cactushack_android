@@ -13,4 +13,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_ac);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getFragmentManager().beginTransaction().replace(R.id.fr_place_holder, new MainFragment()).commit();
+    }
 }
